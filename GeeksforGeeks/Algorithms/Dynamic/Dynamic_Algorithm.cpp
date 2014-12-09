@@ -9,7 +9,7 @@ Typic topic
 	(3)Longest Palindromic SubSequence (LPS)
 	(4)0-1 Knapsack Problem
 	(5)Edit Distance
-	
+	(6)Subset Set Problem
 
 
 */
@@ -271,4 +271,65 @@ int main()
            X, Y, EditDistanceRecursion(X, Y, strlen(X), strlen(Y)));
     getchar();
     return 0;
+}
+
+/*======================(6)Subset Set Problem======================*/
+/*Given a set of non-negative integers, and a value sum, determine if
+ there is a subset of the given set with sum equal to given sum.*/
+
+
+#include <stdio.h>
+
+//recursive implementation
+bool isSubsetSum_recursive(int set[], int n, int sum)
+{
+	if(sum==0){
+		return true;
+	}
+	if(n==0&&sum!=0){
+		return false;
+	}
+	if(sum[n-1]>sum){
+		return isSubsetSum_recursive(set, n-1, sum);
+	}else{
+		return isSubsetSum_recursive(set, n-1, sum)||
+			isSubsetSum_recursive(set, n-1, sum-set[n]);
+	}
+}
+
+//Dynamic Programming implementation
+bool isSubsetSum_dp(int set[], int n, int sum){
+	bool subset[sum+1][n+1];
+	for(int i=0;i<=n;i++){
+		subset[0][i]=true;
+	}
+	for(int i=1;i<=sum;i++){
+		subset[i][0]=false;
+	}
+	for(int i=1;i<=sum;i++){
+		for(int j=1;j<=n;j++){
+			if(i<set[j-1]){
+				subset[i][j]=subset[i][j-1];
+			}else{
+				subset[i][j]=subset[i][j] || subset[i-set[j-1]][j-1];
+			}
+			
+		}
+	}
+	return subset[sum][n];
+}
+
+int main()
+{
+  int set[] = {3, 34, 4, 12, 5, 2};
+  int sum = 9;
+  int n = sizeof(set)/sizeof(set[0]);
+  if (isSubsetSum_recursive(set, n, sum) == true)
+     printf("success by recursive");
+  else if(isSubsetSum_dp(set, n, sum) == true)
+  	 printf("success by recursive");
+  else
+     printf("No subset with given sum");
+  getchar();
+  return 0;
 }
