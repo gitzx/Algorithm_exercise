@@ -23,5 +23,5 @@ public:
 int main(){
     Solution solution;
     int A[10]={1,2,3,4,5,5,6,7,8,5};
-    cout<<solution.removeElement(A,10,5)<<endl;
+    cout<<solution.removeElement(A,10,5)<<endl; //7
 }
