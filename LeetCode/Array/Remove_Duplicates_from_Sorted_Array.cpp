@@ -36,7 +36,8 @@ public:
 };
 
 int main(){
-    Solution solution1;
+    Solution1 solution1;
+    Solution2 solution2;
     int A[5]={1,1,2,2,2};
     cout<<solution1.removeDuplicates(A,5)<<endl;
     cout<<solution2.removeDuplicates(A,5)<<endl;
