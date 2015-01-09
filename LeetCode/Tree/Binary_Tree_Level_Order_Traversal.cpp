@@ -64,6 +64,41 @@ public:
     }
 };
 
+//BFS
+class Solution2{
+public:
+    vector<vector<int> > levelOrder(TreeNode *root){
+       vector<vector<int> > result;
+       vector<TreeNode*> sta;
+       if(root==NULL){
+           return result;
+       }
+       sta.push_back(root);
+       int nextLevelCount=1;
+       int index=0;
+       while(index<sta.size()){
+           int curLevelCount = nextLevelCount;
+           nextLevelCount = 0;
+           vector<int> level;
+           for(int i=index;i<index+curLevelCount;++i){
+               root=sta[i];
+               level.push_back(root->val);
+               if(root->left!=NULL){
+                   sta.push_back(root->left);
+                   nextLevelCount++;
+               }
+               if(root->right!=NULL){
+                   sta.push_back(root->right);
+                   nextLevelCount++;
+               }
+           }
+           result.push_back(level);
+           index=index+curLevelCount;
+       }
+       return result;
+    }
+};
+
 TreeNode *newNode(int data){
     TreeNode *node=(TreeNode*)malloc(sizeof(TreeNode));
     node->val=data;
@@ -83,6 +118,9 @@ int main(){
         for(int j=0;j<result[i].size();++j){
             cout<<result[i][j]<<" ";
         }
+        //1
+        //2 3
+        //4 5
         cout<<endl;
     }
     return 0;
