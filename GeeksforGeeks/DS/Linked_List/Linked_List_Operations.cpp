@@ -84,6 +84,6 @@ int main(){
         push(&head,1);
         insertAfter(head->next,8);
         deleteNode(&head,7);
-        traversalList(head);
+        traversalList(head); //1 8 6
         return 0;
 }
