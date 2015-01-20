@@ -55,6 +55,6 @@ int main(){
     int len=sizeof(in)/sizeof(in[0]);
     TreeNode *root=buildTree(in, pre,0,len-1);
     inorderTraversal(root);
-    cout<<endl;
+    cout<<endl; //D B E A F C
     return 0;
 }
