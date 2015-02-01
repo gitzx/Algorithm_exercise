@@ -2,13 +2,13 @@ Vectors are sequence containers representing arrays that can change in size.
 
 ###Container properties###
 
-- Sequence
+(1)Sequence
 
-- Dynamic array
+(2)Dynamic array
 
-- Allocator-aware
+(3)Allocator-aware
 
-###Member functions###
+###Member ###
 
 #####一.Member functions:#####
 
@@ -28,9 +28,13 @@ Vectors are sequence containers representing arrays that can change in size.
 
 (4)rend
 
-(5)crbegin
+(5)cbegin(C++11)
 
-(6)crend
+(6)cend(C++11)
+
+(7)crbegin(C++11)
+
+(8)crend(C++11)
 
 #####三.Capacity:#####
 
@@ -44,9 +48,9 @@ Vectors are sequence containers representing arrays that can change in size.
 
 (5)empty
 
-(6)reserve
+(6)reserve:Request a change in capacity
 
-(7)shrink_to_fit
+(7)shrink_to_fit(C++11):Shrink to fit
 
 #####四.Element access:#####
 
@@ -58,7 +62,7 @@ Vectors are sequence containers representing arrays that can change in size.
 
 (4)back
 
-(5)data
+(5)data(C++11):Access data
 
 #####五.Modifiers:#####
 
@@ -76,9 +80,9 @@ Vectors are sequence containers representing arrays that can change in size.
 
 (7)clear
 
-(8)emplace
+(8)emplace(C++11):Construct and insert element
 
-(9)emplace_back
+(9)emplace_back(C++11):Construct and insert element at the end
 
 #####六.Allocator:#####
 
