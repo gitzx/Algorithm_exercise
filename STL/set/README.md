@@ -75,7 +75,7 @@ Sets are containers that store unique elements following a specific order.
 
 (5)equal_range :get range of equal elements
 
-#####六.Allocator:#####
+#####六.Observers:#####
 
 (1)key_comp :Return comparison object
 
