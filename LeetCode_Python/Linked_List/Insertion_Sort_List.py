@@ -12,4 +12,21 @@ class ListNode(object):
 
 class Solution(object):
 	def insertionSortList(self, head):
-		
+		if head is None:
+			return head
+		dummy = ListNode(0)
+		dummy.next = head
+		cur = head
+		while cur.next:
+			if cur.next.val < cur.val:
+				pre = dummy
+				while pre.next.val < cur.next.val:
+					pre = pre.next
+				tmp = cur.next
+				cur.next = tmp.next
+				tmp.next = pre.next
+				pre.next = tmp
+			else:
+				cur = cur.next
+		return dummy.next
+
