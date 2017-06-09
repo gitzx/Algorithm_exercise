@@ -18,5 +18,6 @@ class ListNode(object):
 
 class Solution(object):
 	def reorderList(self, head):
-
+		if head==None or head.next==None or head.next.next==None: 
+			return head
 		
