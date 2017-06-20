@@ -17,3 +17,17 @@ class ListNode(object):
 
 class Solution(object):
 	def detectCycle(self, head):
+		if head is None or head.next is None:
+			return None
+		slow = head.next
+		fast = head.next.next
+		while fast and fast.next and slow != fast:
+			fast = fast.next.next
+			slow = slow.next
+		if fast is None or fast.next is None:
+			return None
+		slow = head
+		while slow != fast:
+			slow = slow.next
+			fast = fast.next
+		return slow
