@@ -43,7 +43,7 @@ class Solution(object):
 		node.left = self.str2tree(left[1:-1])
 		node.right = self.str2tree(right[1:-1])
 		return node
-		
+
 	def divide(self, s):
 		part, count = '', 0
 		while s:
@@ -53,13 +53,4 @@ class Solution(object):
 			if count == 0:
 				break
 		return part, s
-
-
-
-
-
-
-
-
-
-
+		

@@ -29,7 +29,8 @@ Input: Binary tree: [1,2,3,null,4]
 Output: "1(2()(4))(3)"
 
 Explanation: Almost the same as the first example, 
-except we can't omit the first parenthesis pair to break the one-to-one mapping relationship between the input and the output.
+except we can't omit the first parenthesis pair to break the one-to-one mapping relationship 
+between the input and the output.
 
 '''
 
@@ -57,13 +58,5 @@ class Solution(object):
 				self.tree2str(t.right)
 				self.result += ")"
 		return self.result
-
-
-
-
-
-
-
-
 
 
