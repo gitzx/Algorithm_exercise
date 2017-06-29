@@ -24,5 +24,17 @@ class TreeNode(object):
 '''
 
 class Solution(object):
+	def __init__(self):
+		self.result = 0
+	def traverse(self, root):
+		if not root:
+			return 0
+		left = self.traverse(root.left)
+		right = self.traverse(root.right)
+		self.result = max(self.result, left + right)
+		return max(left, right) + 1
 	def diameterOfBinaryTree(self, root):
+		self.traverse(root)
+		return self.result
+
 		
